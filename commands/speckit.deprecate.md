@@ -1,5 +1,8 @@
 ---
 description: Initiate a feature deprecation workflow with phased sunset process (warnings → disabled → removed).
+scripts:
+  sh: scripts/bash/create-deprecate.sh --json "{ARGS}"
+  ps: scripts/powershell/create-deprecate.ps1 -Json "{ARGS}"
 ---
 
 The user input to you can be provided directly by the agent or as a command argument - you **MUST** consider it before proceeding with the prompt (if not empty).
@@ -23,7 +26,7 @@ Given that input, do this:
    - If no leading digits (e.g., "low usage"), treat as reason-only (interactive mode)
 
 2. **If interactive mode** (no feature number provided):
-   a. Run `.specify/scripts/bash/create-deprecate.sh --list-features "$REASON"` to get list of features
+   a. Run `{SCRIPT} --list-features "$REASON"` to get list of features
    b. Parse the JSON output which contains: `{"mode":"list","reason":"...","features":[...]}`
    c. Present the features list to the user in a clear, numbered format:
       ```
@@ -41,7 +44,7 @@ Given that input, do this:
    f. Continue to step 3 with the selected feature number
 
 3. **Normal workflow** (feature number now available):
-   Run the script `.specify/scripts/bash/create-deprecate.sh --json "$FEATURE_NUM" "$REASON"` from repo root and parse its JSON output for DEPRECATE_ID, BRANCH_NAME, DEPRECATION_FILE, TASKS_FILE, DEPENDENCIES_FILE, FEATURE_NUM, FEATURE_NAME, and REASON. All file paths must be absolute.
+   Run the script `{SCRIPT} "$FEATURE_NUM" "$REASON"` from repo root and parse its JSON output for DEPRECATE_ID, BRANCH_NAME, DEPRECATION_FILE, TASKS_FILE, DEPENDENCIES_FILE, FEATURE_NUM, FEATURE_NAME, and REASON. All file paths must be absolute.
    **IMPORTANT** You must only ever run this script once per feature selection. The JSON is provided in the terminal as output - always refer to it to get the actual content you're looking for.
 
 4. Load `.specify/extensions/workflows/deprecate/deprecation-template.md` to understand the 3-phase approach (Warnings → Disabled → Removed).
