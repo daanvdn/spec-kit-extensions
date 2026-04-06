@@ -1,0 +1,21 @@
+# .extensionignore
+# Files and directories excluded from installation via `specify extension add`
+
+# Development files
+tmp/
+docs/
+specs/
+.github/
+.specify/
+.idea/
+.vscode/
+
+# Git config
+.gitignore
+
+# Developer documentation (README and LICENSE are kept)
+CONTRIBUTING.md
+EXAMPLES.md
+CHANGELOG.md
+INSTALLATION.md
+AI-AGENTS.md

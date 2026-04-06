@@ -2,6 +2,7 @@
 description: Modify an existing feature with impact analysis and backward compatibility tracking.
 scripts:
   sh: scripts/bash/create-modification.sh --json "{ARGS}"
+  ps: scripts/powershell/create-modification.ps1 -Json "{ARGS}"
 ---
 
 The user input to you can be provided directly by the agent or as a command argument - you **MUST** consider it before proceeding with the prompt (if not empty).

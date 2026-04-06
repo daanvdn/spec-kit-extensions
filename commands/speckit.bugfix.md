@@ -2,6 +2,7 @@
 description: Create a bug fix workflow with regression test and minimal documentation.
 scripts:
   sh: scripts/bash/create-bugfix.sh --json "{ARGS}"
+  ps: scripts/powershell/create-bugfix.ps1 -Json "{ARGS}"
 ---
 
 The user input to you can be provided directly by the agent or as a command argument - you **MUST** consider it before proceeding with the prompt (if not empty).

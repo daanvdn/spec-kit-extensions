@@ -1,0 +1,45 @@
+schema_version: "1.0"
+
+extension:
+  id: "workflows"
+  name: "Workflow Extensions"
+  version: "0.1.0"
+  description: "5 production-tested workflows for bugfix, modify, refactor, hotfix, and deprecate"
+  author: "Daan Van den Nest"
+  repository: "https://github.com/daanvdn/spec-kit-extensions"
+  license: "MIT"
+
+requires:
+  speckit_version: ">=0.1.0"
+
+provides:
+  commands:
+    - name: "speckit.workflows.bugfix"
+      file: "commands/speckit.bugfix.md"
+      description: "Create a bug fix workflow with regression test and minimal documentation"
+
+    - name: "speckit.workflows.modify"
+      file: "commands/speckit.modify.md"
+      description: "Modify an existing feature with impact analysis and backward compatibility tracking"
+
+    - name: "speckit.workflows.refactor"
+      file: "commands/speckit.refactor.md"
+      description: "Create a refactoring workflow with metrics tracking and behavior preservation validation"
+
+    - name: "speckit.workflows.hotfix"
+      file: "commands/speckit.hotfix.md"
+      description: "Create an emergency hotfix workflow with expedited process and mandatory post-mortem"
+
+    - name: "speckit.workflows.deprecate"
+      file: "commands/speckit.deprecate.md"
+      description: "Initiate a feature deprecation workflow with phased sunset process"
+
+tags:
+  - "workflow"
+  - "bugfix"
+  - "modify"
+  - "refactor"
+  - "hotfix"
+  - "deprecate"
+  - "cross-platform"
+  - "powershell"
